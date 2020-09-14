@@ -13,11 +13,10 @@ proxy:
   specs:
   - id: app1
     display-name: App 1
-    #docker-cmd: ["R", "-e shiny::runApp('/root/app')"]
-    docker-image: app1
+    container-cmd: ["R", "-e shiny::runApp('/root/app')"]
+    container-image: app1
     container-network: sp-example-net
-    #container-volumes: ["/home/andrea/dev/shinyproxy/data:/root/data"]
-    container-volumes: ["/root:/root/data"]
+    container-volumes: ["/home/andrea/dev/shinyproxy/data:/root/data"]
 
 logging:
   file:
